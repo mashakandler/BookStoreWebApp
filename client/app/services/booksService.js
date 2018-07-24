@@ -17,8 +17,6 @@
             });
         };
         
-        
-
         dataFactory.showReviews =  function (id, review) {
             return $http.get(`${urlBase}/${id}/reviews`, {
                 headers: {'x-auth': authenticationService.getToken()},
@@ -30,8 +28,6 @@
                 headers: {'x-auth': authenticationService.getToken()},
             }, );
         };
-
-        
 
         return dataFactory;
     }]);

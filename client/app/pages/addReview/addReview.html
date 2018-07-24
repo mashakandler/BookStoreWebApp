@@ -2,9 +2,9 @@
         <div class="container card">
             <h5>Add a review for:</h5>
             <h3>{{bookName}}</h3>
-            
-            
+
             <div class="row">
+                    <div class="alert alert-danger" ng-show="error">{{error}}</div> 
                     <form name="addReviewForm" class="container">
                         <div class="row">
                             <label>* Review Content:</label>

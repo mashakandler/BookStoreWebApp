@@ -8,7 +8,7 @@ var {Review} = require('./../../models/review');
 var {sendReview} = require('./../../rabbit/review-sender');
 var {authenticate} =  require('./../../middleware/authenticate');
 
-bookRouter.post('/', (req, res) => {
+bookRouter.post('/',authenticate, (req, res) => {
     var book = new Book({
       name: req.body.name,
       description: req.body.description,
@@ -60,7 +60,7 @@ bookRouter.post('/', (req, res) => {
     });
   });
   
-  bookRouter.post('/:id/reviews',authenticate,(req,res) => {
+  bookRouter.post('/:id/reviews',(req,res) => {
     var id = req.params.id;
     if (!ObjectID.isValid(id)) {
       return res.status(404).send();

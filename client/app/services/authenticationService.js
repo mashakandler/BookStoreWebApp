@@ -12,13 +12,11 @@
                         .then(function(response){
                             var headers =  response.headers();
                             token = headers["x-auth"];
-                            console.log(token);
                             successCallback(response);
                         }, errorCallback);
         };
 
         dataFactory.getToken = function(){
-           console.log(token);
             return token;
         } 
 

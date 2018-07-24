@@ -32,9 +32,4 @@ app.config(function($stateProvider,  $urlRouterProvider) {
     }
   });
 
-//   $stateProvider.state("results", {
-//     url: "/results",
-//     templateUrl: "/app/searchResults/searchResults.html",
-//     controller: "searchResultsCtrl"
-//     });
 });

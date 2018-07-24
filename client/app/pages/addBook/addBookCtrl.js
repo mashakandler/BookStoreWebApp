@@ -6,6 +6,8 @@
         description: ""
        };
 
+       $scope.error = "";
+
 
        let user = authenticationService.getToken();
        if(!user){
@@ -16,7 +18,11 @@
             booksService.addBook($scope.bookModel).then(function(){
                 $state.go('books');
             }, function error(response) {
-                alert("An error occured")
+                if(response.status == 401){
+                    $scope.error = "Only admins can add books to the systems"; 
+                } else{
+                    $scope.error = "Something went wrong, please try again."; 
+                }
             });    
        }
     });
