@@ -31,6 +31,6 @@
         $scope.addBook = function(){
             $state.go('addBook');
         }
-
     });
 })();
+
