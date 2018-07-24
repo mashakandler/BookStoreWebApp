@@ -25,9 +25,6 @@ userRouter.post('/', (req, res) => {
     })
   });
   
-  userRouter.get('/me', authenticate, (req, res) => {
-    res.send(req.user);
-  });
   
   userRouter.post('/login', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);

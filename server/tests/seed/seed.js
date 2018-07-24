@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const {Book} = require('./../../models/book');
 const {User} = require('./../../models/user');
+const {Review} = require('./../../models/review');
 
 const userOneId = new ObjectID();
 const userTwoId = new ObjectID();
@@ -49,4 +50,8 @@ const populateUsers = (done) => {
   }).then(() => done());
 };
 
-module.exports = {books , populateBooks, users, populateUsers};
+const clearReviews = (done) => {
+  Review.remove({}).then(()=> done());
+}
+
+module.exports = {books , populateBooks, users, populateUsers,clearReviews};
