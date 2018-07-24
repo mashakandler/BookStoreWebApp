@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/style.css"  rel="stylesheet"/>
+<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular-ui-router/angular-ui-router.min.js"></script>
+<!-- <script src="lib/bootstrap-ui/ui-bootstrap-tpls-2.5.0.min.js"></script> -->
+<base href="/#/"/>
+
+<body ng-app="flightApp">
+    <div>
+        <ui-view></ui-view>
+    </div>
+
+    <script src="app/app.js"></script>
+    <script src="app/services/authenticationService.js"></script>
+    <script src="app/services/booksService.js"></script>
+    <script src="app/pages/loginPage/loginPageCtrl.js"></script>
+    <script src="app/pages/booksList/booksListCtrl.js"></script>
+    <script src="app/pages/addBook/addBookCtrl.js"></script>
+    <script src="app/pages/addReview/addReviewCtrl.js"></script>
+</body>
+</html>

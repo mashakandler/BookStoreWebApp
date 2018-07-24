@@ -1,0 +1,52 @@
+body {
+    background-image: url('../images/books.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+body:before {
+    content: ' ';
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(4, 30, 58, 0.58);
+}
+
+.add-book,
+.add-review,
+.book-list,
+.login-form{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-list .row{
+    margin-left: 0;
+}
+
+.card {
+    max-width: 800px;
+    padding: 5%;
+    margin: 5%;
+    box-shadow: 0 0 10px #161515;
+}
+
+h3{
+    margin-bottom: 20px;
+}
+
+.book-list img{max-width: 185px;}
+
+.add-book .form-group{
+    padding: 2%;
+}
+
+.book-img img {
+    padding: 20px 0;
+    width: 500px;
+    height: auto;
+}

@@ -1,0 +1,27 @@
+<div class="add-book">
+        <div class="container card">
+            <h3>Add a book</h3>           
+                <form >
+                    <div class="row">
+                        <div class="form-group col-sm">
+                            <label>Name:</label>
+                            <input class="form-control" type="text" ng-model="bookModel.name" >
+                        </div>
+                        <div class="form-group col-sm">
+                            <label>Image Url:</label>
+                            <input class="form-control" type="url" ng-model="bookModel.imageUrl" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm">
+                            <label>Description:</label>
+                            <textarea rows="5" class="form-control" ng-model="bookModel.description"></textarea>
+                        </div>
+                    </div>
+                    <div class="book-img" ng-show="bookModel.imageUrl">
+                            <img ng-src="{{bookModel.imageUrl}}"/>
+                    </div>
+                    <button class=" btn btn-success" ng-click="addBook()">Add a book</button>
+                </form>
+        </div>
+</div>

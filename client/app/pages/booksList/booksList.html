@@ -1,0 +1,23 @@
+<div class="book-list">
+        <div class="container card">
+            <h1>Recommended Amazon Books </h1>
+            <div class="row mb-2">
+                <button class=" btn btn-danger" ng-click="addBook()">Add A Book</button>
+            </div>
+            <div class="row" ng-repeat="book in bookListModel">
+                <div>
+                    <img ng-src="{{book.imageUrl}}"/>
+                    <h3>{{book.name}}</h3>
+                    <p>{{book.description}}</p>
+                    <button class=" btn btn-success" ng-click="addReview(book)">Add a review</button>
+                    <button class=" btn btn-warning" ng-click="showReviews(book)">Show reviews</button>
+                    <hr />
+                    <div class="row" ng-repeat="review in book.reviews" ng-if="book.showReviews">
+                        {{review.review}}
+                        <hr />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</div>
