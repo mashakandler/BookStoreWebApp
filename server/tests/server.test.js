@@ -6,10 +6,11 @@ const {app} = require('./../server');
 const {Book} = require('./../models/book');
 const {User} = require('./../models/user');
 
-const {books, populateBooks, users, populateUsers} = require('./seed/seed');
+const {books, populateBooks, users, populateUsers,clearReviews} = require('./seed/seed');
 
 beforeEach(populateUsers);
 beforeEach(populateBooks);
+beforeEach(clearReviews);
 
 
 
