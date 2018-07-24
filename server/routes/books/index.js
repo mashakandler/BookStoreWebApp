@@ -6,7 +6,7 @@ const {ObjectID} = require('mongodb');
 var {Book} = require('./../../models/book');
 var {Review} = require('./../../models/review');
 var {sendReview} = require('./../../rabbit/review-sender');
-
+var {authenticate} =  require('./../../middleware/authenticate');
 
 bookRouter.post('/', (req, res) => {
     var book = new Book({
@@ -22,7 +22,7 @@ bookRouter.post('/', (req, res) => {
     });
   });
   
-  bookRouter.get('/', (req, res) => {
+  bookRouter.get('/',(req, res) => {
     Book.find().then((books) => {
       res.send({books});
     }, (e) => {
@@ -60,7 +60,7 @@ bookRouter.post('/', (req, res) => {
     });
   });
   
-  bookRouter.post('/:id/reviews',(req,res) => {
+  bookRouter.post('/:id/reviews',authenticate,(req,res) => {
     var id = req.params.id;
     if (!ObjectID.isValid(id)) {
       return res.status(404).send();
@@ -72,7 +72,6 @@ bookRouter.post('/', (req, res) => {
       var text = req.body.review;
       console.log("Sending A Review To Rabbit MQ Worker Queue");
       sendReview({ bookId:id ,review:text,ts:Date.now()});
-      console.log("Review Was Sent to Queue Successfully");
       res.status(200).send();
     })
   });
