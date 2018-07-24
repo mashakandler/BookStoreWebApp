@@ -1,8 +1,8 @@
 (function(){
     app.controller('loginPageCtrl',  function($scope, $state,authenticationService){
         $scope.loginModel = {
-            email : "user@example.com",
-            password : "password2!"
+            email : "admin@example.com",
+            password : "password1!"
         }
 
         $scope.loginSubmitHandler = function(){

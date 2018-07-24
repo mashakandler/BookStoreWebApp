@@ -44,7 +44,7 @@ UserSchema.methods.generateAuthToken = function () {
   var user = this;
   var access = 'auth';
   var token = jwt.sign({_id: user._id.toHexString(), access}, process.env.JWT_SECRET).toString();
-  if(user.email.includes('client@')){
+  if(user.email.includes('user@')){
     console.log("not generating tokens");
   }else {
     user.tokens.push({access, token});
