@@ -1,15 +1,15 @@
 <div class="add-book">
         <div class="container card">
             <h3>Add a book</h3>           
-                <form >
+                <form name="addBookForm">
                     <div class="row">
                         <div class="form-group col-sm">
-                            <label>Name:</label>
-                            <input class="form-control" type="text" ng-model="bookModel.name" >
+                            <label>* Name:</label>
+                            <input class="form-control" type="text" ng-model="bookModel.name" required="required" >
                         </div>
                         <div class="form-group col-sm">
-                            <label>Image Url:</label>
-                            <input class="form-control" type="url" ng-model="bookModel.imageUrl" >
+                            <label>* Image Url:</label>
+                            <input class="form-control" type="url" ng-model="bookModel.imageUrl"  required="required" >
                         </div>
                     </div>
                     <div class="row">
@@ -21,7 +21,7 @@
                     <div class="book-img" ng-show="bookModel.imageUrl">
                             <img ng-src="{{bookModel.imageUrl}}"/>
                     </div>
-                    <button class=" btn btn-success" ng-click="addBook()">Add a book</button>
+                    <button class=" btn btn-success" ng-click="addBook()" ng-disabled="addBookForm.$invalid">Add a book</button>
                 </form>
         </div>
 </div>
