@@ -13,6 +13,3 @@ var sendReview = function(data) {
 
 
 module.exports = {sendReview}
-
-
-//{ name: "Hunter" ,data:"good",review:"bad",ts:Date.now()}

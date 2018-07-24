@@ -73,8 +73,9 @@ bookRouter.post('/', (req, res) => {
       var rev = new Review();
       rev.bookId = id;
       rev.review = text;
+      console.log("Sending A Review To Rabbit MQ Worker Queue");
       sendReview({ bookId:id ,review:text,ts:Date.now()});
-    
+      console.log("Review Was Sent to Queue Successfully");
       rev.save().then((doc) => {
         res.send(doc);
       }, (e) => {
